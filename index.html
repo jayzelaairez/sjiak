@@ -378,81 +378,29 @@
     </section>
 
     <section id="book" class="py-24 lg:py-32" style="background: var(--gradient-soft)">
-        <div class="mx-auto max-w-3xl px-6">
-            <div class="text-center">
-                <p class="text-[0.65rem] uppercase tracking-[0.35em] text-[var(--gold-deep)]">Book an Appointment</p>
-                <h2 class="mt-4 text-4xl sm:text-5xl">
-                    Let's make a <em class="text-[var(--gold-deep)]">beautiful</em> start.
-                </h2>
-                <p class="mt-4 text-[var(--muted-foreground)]">
-                    Send us your details and we'll confirm your slot within the day.
-                </p>
-            </div>
-
-            <div class="mt-12 rounded-3xl border border-[var(--border)] bg-[var(--card)] p-8 sm:p-10" style="box-shadow: var(--shadow-soft)">
-                
-                <div x-show="isSubmitted" x-transition class="text-center py-10 space-y-4">
-                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-green-600">
-                        <i data-lucide="check-circle" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold">Appointment Request Received!</h3>
-                    <p class="text-sm text-[var(--muted-foreground)] max-w-md mx-auto">
-                        Thank you, <span class="font-medium text-[var(--foreground)]" x-text="form.name"></span>. We have saved your request for a <span class="font-medium text-[var(--foreground)]" x-text="form.service"></span> treatment on <span class="font-medium text-[var(--foreground)]" x-text="form.date"></span>. Our concierge will message you shortly.
-                    </p>
-                    <button @click="resetForm()" class="mt-6 rounded-full border border-[var(--foreground)]/30 px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] hover:bg-[var(--ivory)] transition">
-                        Book Another Slot
-                    </button>
-                </div>
-
-                <form x-show="!isSubmitted" @submit.prevent="handleSubmit" class="space-y-5">
-                    <div class="grid gap-5 sm:grid-cols-2">
-                        <div>
-                            <label for="full-name" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
-                                Full name <span class="text-[var(--gold-deep)]">*</span>
-                            </label>
-                            <input id="full-name" type="text" x-model="form.name" placeholder="Juana Dela Cruz" required class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20" />
-                        </div>
-                        <div>
-                            <label for="contact-info" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
-                                Mobile / Email <span class="text-[var(--gold-deep)]">*</span>
-                            </label>
-                            <input id="contact-info" type="text" x-model="form.contact" placeholder="0917 000 0000" required class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20" />
-                        </div>
-                    </div>
-
-                    <div class="grid gap-5 sm:grid-cols-2">
-                        <div>
-                            <label for="service-select" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Service</label>
-                            <select id="service-select" x-model="form.service" class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20">
-                                <option value="Haircuts & Styling">Haircuts & Styling</option>
-                                <option value="Hair Coloring">Hair Coloring</option>
-                                <option value="Keratin & Perm">Keratin & Perm</option>
-                                <option value="Nail Services">Nail Services</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="preferred-date" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Preferred date</label>
-                            <input id="preferred-date" type="date" x-model="form.date" class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20" />
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="form-notes" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Notes (optional)</label>
-                        <textarea id="form-notes" rows="4" x-model="form.notes" placeholder="Any special requests or hair conditions we should know about..." class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20"></textarea>
-                    </div>
-
-                    <div x-show="errorMessage" x-transition class="rounded-xl bg-red-50 p-4 text-xs text-red-800" x-text="errorMessage"></div>
-
-                    <button type="submit" :disabled="isLoading" class="w-full rounded-full bg-[var(--foreground)] py-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--background)] transition disabled:opacity-50 flex items-center justify-center gap-2">
-                        <span x-show="!isLoading">Request Appointment</span>
-                        <span x-show="isLoading" class="inline-block animate-spin rounded-full h-3 w-3 border-2 border-current border-t-transparent"></span>
-                        <span x-show="isLoading">Processing...</span>
-                    </button>
-                </form>
-            </div>
+    <div class="mx-auto max-w-5xl px-6">
+        <div class="text-center">
+            <p class="text-[0.65rem] uppercase tracking-[0.35em] text-[var(--gold-deep)]">Book an Appointment</p>
+            <h2 class="mt-4 text-4xl sm:text-5xl">
+                Let's make a <em class="text-[var(--gold-deep)]">beautiful</em> start.
+            </h2>
+            <p class="mt-4 text-[var(--muted-foreground)]">
+                Select a live opening below to book your appointment instantly.
+            </p>
         </div>
-    </section>
 
+        <!-- Embedded Calendly Widget Container -->
+        <div class="mt-12 overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)] p-2 sm:p-4" style="box-shadow: var(--shadow-soft)">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/jayzelaairez/haircut-appointment?hide_landing_page_details=1&hide_gdpr_banner=1" 
+                 style="min-width:320px;height:700px;">
+            </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </div>
+</section>
     <footer class="border-t border-[var(--border)] py-12 text-center text-xs tracking-wider text-[var(--muted-foreground)]">
         <p>&copy; 2026 SIJAK Korean Salon Malolos. All rights reserved.</p>
     </footer>
