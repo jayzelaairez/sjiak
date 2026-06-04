@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIJAK Korean Salon Malolos — Hair, Color & Nails</title>
+    <meta name="description" content="Premium Korean-inspired hair salon in Vista Mall Malolos. Haircuts, color, keratin treatment & nail services. Book your appointment today.">
+    
+    <meta property="og:title" content="SIJAK Korean Salon Malolos">
+    <meta property="og:description" content="Korean-inspired haircuts, color, keratin treatments & nails in Malolos, Bulacan.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --background: #fafaf9;
+            --foreground: #1c1917;
+            --muted-foreground: #78716c;
+            --border: #e7e5e4;
+            --card: #ffffff;
+            --input: #e7e5e4;
+            --gold: #eab308;
+            --gold-deep: #b45309;
+            --ivory: #f5f5f4;
+            
+            --gradient-hero: linear-gradient(to bottom, #fef08a 0%, #fafaf9 100%);
+            --gradient-soft: linear-gradient(to bottom, #f5f5f4 0%, #fafaf9 100%);
+            --gradient-gold: linear-gradient(135deg, #ca8a04 0%, #854d0e 100%);
+
+            --shadow-soft: 0 4px 20px -2px rgba(28, 25, 22, 0.05);
+            --shadow-elegant: 0 20px 40px -10px rgba(28, 25, 22, 0.12);
+            --shadow-gold: 0 10px 25px -5px rgba(180, 83, 9, 0.4);
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .font-display {
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased" x-data="bookingApp()">
+
+    <header class="fixed top-0 z-50 w-full border-b border-[var(--border)]/60 bg-[var(--background)]/85 backdrop-blur-md">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <a href="#top" class="flex items-baseline gap-2 group">
+                <span class="font-display text-2xl tracking-[0.15em] text-[var(--foreground)] transition group-hover:text-[var(--gold-deep)]">
+                    SIJAK
+                </span>
+                <span class="text-[0.65rem] uppercase tracking-[0.3em] text-[var(--gold-deep)]">
+                    시작 · Korean Salon
+                </span>
+            </a>
+            <nav class="hidden items-center gap-10 text-xs uppercase tracking-[0.2em] md:flex">
+                <a href="#services" class="text-[var(--muted-foreground)] transition hover:text-[var(--gold-deep)]">Services</a>
+                <a href="#about" class="text-[var(--muted-foreground)] transition hover:text-[var(--gold-deep)]">About</a>
+                <a href="#visit" class="text-[var(--muted-foreground)] transition hover:text-[var(--gold-deep)]">Visit</a>
+                <a href="#book" class="text-[var(--muted-foreground)] transition hover:text-[var(--gold-deep)]">Book</a>
+            </nav>
+            <a href="#book" class="rounded-full border border-[var(--foreground)] bg-[var(--foreground)] px-5 py-2 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[var(--background)] transition hover:bg-transparent hover:text-[var(--foreground)]">
+                Book Now
+            </a>
+        </div>
+    </header>
+
+    <section id="top" class="relative flex min-h-screen items-center overflow-hidden pt-24" style="background: var(--gradient-hero)">
+        <div class="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--background)]/60 px-4 py-1.5 text-[0.65rem] uppercase tracking-[0.25em] text-[var(--gold-deep)] backdrop-blur">
+                    <i data-lucide="sparkles" class="h-3 w-3"></i> Korean Beauty · Malolos
+                </div>
+                <h1 class="font-display text-5xl leading-[1.02] sm:text-6xl lg:text-[5.5rem]">
+                    Where Korean<br />
+                    <em class="font-normal text-[var(--gold-deep)]">artistry</em> meets<br />
+                    your everyday glow.
+                </h1>
+                <p class="max-w-lg text-lg leading-relaxed text-[var(--muted-foreground)]">
+                    SIJAK Korean Salon brings premium haircuts, color, keratin treatments and nail care to Vista Mall Malolos — quietly luxurious, gently personal.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#book" class="rounded-full bg-[var(--foreground)] px-8 py-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--background)] transition" style="box-shadow: var(--shadow-soft)">
+                        Book an Appointment
+                    </a>
+                    <a href="#services" class="rounded-full border border-[var(--foreground)]/30 px-8 py-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--foreground)] transition hover:border-[var(--gold-deep)] hover:text-[var(--gold-deep)]">
+                        View Services
+                    </a>
+                </div>
+                <div class="flex items-center gap-6 pt-4 text-sm text-[var(--muted-foreground)]">
+                    <div class="flex items-center gap-1.5">
+                        <i data-lucide="star" class="h-4 w-4 fill-yellow-500 text-yellow-500"></i>
+                        <i data-lucide="star" class="h-4 w-4 fill-yellow-500 text-yellow-500"></i>
+                        <i data-lucide="star" class="h-4 w-4 fill-yellow-500 text-yellow-500"></i>
+                        <i data-lucide="star" class="h-4 w-4 fill-yellow-500 text-yellow-500"></i>
+                        <i data-lucide="star" class="h-4 w-4 text-yellow-500/40"></i>
+                        <span class="ml-1 font-medium text-[var(--foreground)]">4.5</span>
+                    </div>
+                    <span>· 15+ happy reviews</span>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="relative overflow-hidden rounded-[2rem]" style="box-shadow: var(--shadow-elegant)">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=80" alt="SIJAK Korean Salon storefront at Vista Mall Malolos" class="h-[600px] w-full object-cover" />
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--foreground)]/10 via-transparent to-transparent" />
+                </div>
+                <div class="absolute -bottom-6 -left-6 hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 sm:block" style="box-shadow: var(--shadow-soft)">
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--ivory)] ring-1 ring-[var(--gold)]/40">
+                            <i data-lucide="clock" class="h-5 w-5 text-[var(--gold-deep)]"></i>
+                        </div>
+                        <div>
+                            <p class="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Open today</p>
+                            <p class="font-medium">Until 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="text-[0.65rem] uppercase tracking-[0.35em] text-[var(--gold-deep)]">Our Services</p>
+                <h2 class="mt-4 text-4xl sm:text-5xl">
+                    Crafted for the <em class="text-[var(--gold-deep)]">modern Filipina</em>
+                </h2>
+                <p class="mt-4 text-[var(--muted-foreground)]">
+                    Every treatment is rooted in Korean technique and finished with the warmth of Filipino hospitality.
+                </p>
+            </div>
+
+            <div class="mt-16 grid gap-8 md:grid-cols-2">
+                <article class="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)] transition" style="box-shadow: var(--shadow-soft)">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1024&q=80" alt="Haircuts & Styling" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                        <div class="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background)]/90 ring-1 ring-[var(--gold)]/40 backdrop-blur">
+                            <i data-lucide="scissors" class="h-5 w-5 text-[var(--gold-deep)]"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold">Haircuts & Styling</h3>
+                        <p class="mt-2 text-sm text-[var(--muted-foreground)]">Precision Korean cutting techniques tailored to your face shape and lifestyle.</p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Ladies' Haircut</span> <span class="font-medium text-[var(--gold-deep)]">from ₱450</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Men's Haircut</span> <span class="font-medium text-[var(--gold-deep)]">from ₱250</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Korean Blow-dry</span> <span class="font-medium text-[var(--gold-deep)]">from ₱350</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)] transition" style="box-shadow: var(--shadow-soft)">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605497746445-97d1b0a9eaf4?auto=format&fit=crop&w=1024&q=80" alt="Hair Coloring" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                        <div class="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background)]/90 ring-1 ring-[var(--gold)]/40 backdrop-blur">
+                            <i data-lucide="palette" class="h-5 w-5 text-[var(--gold-deep)]"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold">Hair Coloring</h3>
+                        <p class="mt-2 text-sm text-[var(--muted-foreground)]">From soft balayage to bold Korean tones — premium color that lasts.</p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Single Process</span> <span class="font-medium text-[var(--gold-deep)]">from ₱1,200</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Highlights / Balayage</span> <span class="font-medium text-[var(--gold-deep)]">from ₱2,800</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Korean Hair Color</span> <span class="font-medium text-[var(--gold-deep)]">from ₱1,800</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)] transition" style="box-shadow: var(--shadow-soft)">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1024&q=80" alt="Keratin & Perm" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                        <div class="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background)]/90 ring-1 ring-[var(--gold)]/40 backdrop-blur">
+                            <i data-lucide="sparkles" class="h-5 w-5 text-[var(--gold-deep)]"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold">Keratin & Perm</h3>
+                        <p class="mt-2 text-sm text-[var(--muted-foreground)]">Smooth, glossy, frizz-free hair with our signature keratin protocol and bouncy Korean perm.</p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Keratin Smoothening</span> <span class="font-medium text-[var(--gold-deep)]">from ₱3,500</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Bouncy Korean Perm</span> <span class="font-medium text-[var(--gold-deep)]">from ₱3,200</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Hair Botox</span> <span class="font-medium text-[var(--gold-deep)]">from ₱2,500</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="group overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)] transition" style="box-shadow: var(--shadow-soft)">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1632345031435-8797b2d58045?auto=format&fit=crop&w=1024&q=80" alt="Nail Services" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                        <div class="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--background)]/90 ring-1 ring-[var(--gold)]/40 backdrop-blur">
+                            <i data-lucide="hand" class="h-5 w-5 text-[var(--gold-deep)]"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold">Nail Services</h3>
+                        <p class="mt-2 text-sm text-[var(--muted-foreground)]">Pampering manicure and pedicure with quality polishes and gentle care.</p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Classic Manicure</span> <span class="font-medium text-[var(--gold-deep)]">from ₱180</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Gel Polish</span> <span class="font-medium text-[var(--gold-deep)]">from ₱450</span>
+                            </li>
+                            <li class="flex items-center justify-between border-b border-dashed border-[var(--border)] pb-3 text-sm">
+                                <span>Mani + Pedi Combo</span> <span class="font-medium text-[var(--gold-deep)]">from ₱350</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+            <p class="mt-10 text-center text-[0.65rem] uppercase tracking-[0.25em] text-[var(--muted-foreground)]">
+                Prices are starting rates and may vary by hair length and condition.
+            </p>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 lg:py-32" style="background: var(--gradient-soft)">
+        <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=820&q=80" alt="Inside SIJAK Korean Salon Malolos" class="aspect-[4/5] w-full rounded-3xl object-cover" style="box-shadow: var(--shadow-elegant)" />
+                <div class="absolute -bottom-6 -right-6 hidden h-32 w-32 rounded-full sm:block" style="background: var(--gradient-gold)" aria-hidden="true"></div>
+            </div>
+
+            <div>
+                <p class="text-[0.65rem] uppercase tracking-[0.35em] text-[var(--gold-deep)]">About SIJAK</p>
+                <h2 class="mt-4 text-4xl sm:text-5xl">
+                    A little corner of Seoul, right here in Malolos.
+                </h2>
+                <p class="mt-6 text-[var(--muted-foreground)]">
+                    <span class="font-display text-xl italic text-[var(--gold-deep)]">시작 (Sijak)</span> means <em>beginning</em> — and every visit with us is a fresh start. Our Korean-trained directors blend precision cutting, gentle color, and nourishing treatments so you leave feeling lighter, brighter, and a little more like yourself.
+                </p>
+
+                <div class="mt-10 grid grid-cols-3 gap-6">
+                    <div class="border-t border-[var(--gold)]/40 pt-4">
+                        <p class="font-display text-3xl text-[var(--foreground)]">4.5★</p>
+                        <p class="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Google rating</p>
+                    </div>
+                    <div class="border-t border-[var(--gold)]/40 pt-4">
+                        <p class="font-display text-3xl text-[var(--foreground)]">100%</p>
+                        <p class="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Korean technique</p>
+                    </div>
+                    <div class="border-t border-[var(--gold)]/40 pt-4">
+                        <p class="font-display text-3xl text-[var(--foreground)]">7 days</p>
+                        <p class="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">A week, for you</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 space-y-5">
+                    <figure class="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6" style="box-shadow: var(--shadow-soft)">
+                        <div class="mb-2 flex gap-0.5 text-yellow-500">
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                        </div>
+                        <blockquote class="font-display text-base italic leading-relaxed text-[var(--foreground)]">
+                            "I got my bouncy perm and I'm so happy with the results! My hair looks fuller, soft, and perfectly curled."
+                        </blockquote>
+                        <figcaption class="mt-2 text-xs uppercase tracking-[0.15em] text-[var(--muted-foreground)]">— Jemarie Urbano</figcaption>
+                    </figure>
+
+                    <figure class="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6" style="box-shadow: var(--shadow-soft)">
+                        <div class="mb-2 flex gap-0.5 text-yellow-500">
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                        </div>
+                        <blockquote class="font-display text-base italic leading-relaxed text-[var(--foreground)]">
+                            "The stylist really took time to listen to what I wanted and gave thoughtful suggestions. Precise, attentive, and comfortable from start to finish."
+                        </blockquote>
+                        <figcaption class="mt-2 text-xs uppercase tracking-[0.15em] text-[var(--muted-foreground)]">— Charlotte Harper</figcaption>
+                    </figure>
+
+                    <figure class="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6" style="box-shadow: var(--shadow-soft)">
+                        <div class="mb-2 flex gap-0.5 text-yellow-500">
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                            <i data-lucide="star" class="h-3.5 w-3.5 fill-current"></i>
+                        </div>
+                        <blockquote class="font-display text-base italic leading-relaxed text-[var(--foreground)]">
+                            "Worth your time and your money. Great customer service. Would be my go-to salon every time I visit the PH."
+                        </blockquote>
+                        <figcaption class="mt-2 text-xs uppercase tracking-[0.15em] text-[var(--muted-foreground)]">— Kristen Grace Lopez</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visit" class="py-24 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+                <div class="overflow-hidden rounded-3xl border border-[var(--border)]" style="box-shadow: var(--shadow-elegant)">
+                    <iframe title="SIJAK Korean Salon Malolos location" src="https://maps.google.com/maps?q=SIJAK%20Korean%20Salon%20Vista%20Mall%20Malolos%20Bulacan&t=&z=15&ie=UTF-8&iwloc=&output=embed" width="100%" height="500" loading="lazy" referrerPolicy="no-referrer-when-downgrade" class="border-0"></iframe>
+                </div>
+
+                <div>
+                    <p class="text-[0.65rem] uppercase tracking-[0.35em] text-[var(--gold-deep)]">Visit Us</p>
+                    <h2 class="mt-4 text-4xl sm:text-5xl">
+                        Find us at <em class="text-[var(--gold-deep)]">Vista Mall</em>
+                    </h2>
+                    <p class="mt-4 text-[var(--muted-foreground)]">
+                        Walk-ins welcome — but we recommend booking ahead, especially on weekends.
+                    </p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--ivory)] ring-1 ring-[var(--gold)]/40">
+                                <i data-lucide="map-pin" class="text-[var(--gold-deep)] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Address</p>
+                                <p class="mt-1 font-medium">Vista Mall Malolos</p>
+                                <p class="text-sm text-[var(--muted-foreground)]">Malolos, 3000 Bulacan, Philippines</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--ivory)] ring-1 ring-[var(--gold)]/40">
+                                <i data-lucide="phone" class="text-[var(--gold-deep)] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Call or text</p>
+                                <a href="tel:+639952122569" class="mt-1 block font-medium hover:text-[var(--gold-deep)] transition">0995 212 2569</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--ivory)] ring-1 ring-[var(--gold)]/40">
+                                <i data-lucide="clock" class="text-[var(--gold-deep)] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Hours</p>
+                                <p class="mt-1 font-medium">Open daily · 10 AM – 9 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps?q=SIJAK+Korean+Salon+Vista+Mall+Malolos+Bulacan" target="_blank" rel="noreferrer" class="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--foreground)]/30 px-6 py-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--foreground)] transition hover:border-[var(--gold-deep)] hover:text-[var(--gold-deep)]">
+                        Get Directions →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-24 lg:py-32" style="background: var(--gradient-soft)">
+        <div class="mx-auto max-w-3xl px-6">
+            <div class="text-center">
+                <p class="text-[0.65rem] uppercase tracking-[0.35em] text-[var(--gold-deep)]">Book an Appointment</p>
+                <h2 class="mt-4 text-4xl sm:text-5xl">
+                    Let's make a <em class="text-[var(--gold-deep)]">beautiful</em> start.
+                </h2>
+                <p class="mt-4 text-[var(--muted-foreground)]">
+                    Send us your details and we'll confirm your slot within the day.
+                </p>
+            </div>
+
+            <div class="mt-12 rounded-3xl border border-[var(--border)] bg-[var(--card)] p-8 sm:p-10" style="box-shadow: var(--shadow-soft)">
+                
+                <div x-show="isSubmitted" x-transition class="text-center py-10 space-y-4">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-green-600">
+                        <i data-lucide="check-circle" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold">Appointment Request Received!</h3>
+                    <p class="text-sm text-[var(--muted-foreground)] max-w-md mx-auto">
+                        Thank you, <span class="font-medium text-[var(--foreground)]" x-text="form.name"></span>. We have saved your request for a <span class="font-medium text-[var(--foreground)]" x-text="form.service"></span> treatment on <span class="font-medium text-[var(--foreground)]" x-text="form.date"></span>. Our concierge will message you shortly.
+                    </p>
+                    <button @click="resetForm()" class="mt-6 rounded-full border border-[var(--foreground)]/30 px-6 py-2.5 text-xs font-medium uppercase tracking-[0.15em] hover:bg-[var(--ivory)] transition">
+                        Book Another Slot
+                    </button>
+                </div>
+
+                <form x-show="!isSubmitted" @submit.prevent="handleSubmit" class="space-y-5">
+                    <div class="grid gap-5 sm:grid-cols-2">
+                        <div>
+                            <label for="full-name" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+                                Full name <span class="text-[var(--gold-deep)]">*</span>
+                            </label>
+                            <input id="full-name" type="text" x-model="form.name" placeholder="Juana Dela Cruz" required class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20" />
+                        </div>
+                        <div>
+                            <label for="contact-info" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+                                Mobile / Email <span class="text-[var(--gold-deep)]">*</span>
+                            </label>
+                            <input id="contact-info" type="text" x-model="form.contact" placeholder="0917 000 0000" required class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20" />
+                        </div>
+                    </div>
+
+                    <div class="grid gap-5 sm:grid-cols-2">
+                        <div>
+                            <label for="service-select" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Service</label>
+                            <select id="service-select" x-model="form.service" class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20">
+                                <option value="Haircuts & Styling">Haircuts & Styling</option>
+                                <option value="Hair Coloring">Hair Coloring</option>
+                                <option value="Keratin & Perm">Keratin & Perm</option>
+                                <option value="Nail Services">Nail Services</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="preferred-date" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Preferred date</label>
+                            <input id="preferred-date" type="date" x-model="form.date" class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="form-notes" class="mb-2 block text-[0.65rem] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Notes (optional)</label>
+                        <textarea id="form-notes" rows="4" x-model="form.notes" placeholder="Any special requests or hair conditions we should know about..." class="w-full rounded-xl border border-[var(--input)] bg-[var(--background)] px-4 py-3 text-sm outline-none transition focus:border-[var(--gold)] focus:ring-2 focus:ring-[var(--gold)]/20"></textarea>
+                    </div>
+
+                    <div x-show="errorMessage" x-transition class="rounded-xl bg-red-50 p-4 text-xs text-red-800" x-text="errorMessage"></div>
+
+                    <button type="submit" :disabled="isLoading" class="w-full rounded-full bg-[var(--foreground)] py-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--background)] transition disabled:opacity-50 flex items-center justify-center gap-2">
+                        <span x-show="!isLoading">Request Appointment</span>
+                        <span x-show="isLoading" class="inline-block animate-spin rounded-full h-3 w-3 border-2 border-current border-t-transparent"></span>
+                        <span x-show="isLoading">Processing...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-[var(--border)] py-12 text-center text-xs tracking-wider text-[var(--muted-foreground)]">
+        <p>&copy; 2026 SIJAK Korean Salon Malolos. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        function bookingApp() {
+            return {
+                form: {
+                    name: '',
+                    contact: '',
+                    service: 'Haircuts & Styling',
+                    date: '',
+                    notes: ''
+                },
+                isLoading: false,
+                isSubmitted: false,
+                errorMessage: '',
+                async handleSubmit() {
+                    this.isLoading = true;
+                    this.errorMessage = '';
+                    
+                    try {
+                        const response = await fetch('/api/book', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(this.form)
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.success) {
+                            this.isSubmitted = true;
+                            // Re-initialize dynamic vector graphics on template update toggle
+                            this.$nextTick(() => lucide.createIcons());
+                        } else {
+                            this.errorMessage = result.message || 'Something went wrong. Please check your data fields.';
+                        }
+                    } catch (error) {
+                        console.error('Submission processing fault:', error);
+                        this.errorMessage = 'Network timeout errors occurred. Please try again.';
+                    } finally {
+                        this.isLoading = false;
+                    }
+                },
+                resetForm() {
+                    this.form = {
+                        name: '',
+                        contact: '',
+                        service: 'Haircuts & Styling',
+                        date: '',
+                        notes: ''
+                    };
+                    this.isSubmitted = false;
+                    this.$nextTick(() => lucide.createIcons());
+                }
+            }
+        }
+    </script>
+</body>
+</html>
